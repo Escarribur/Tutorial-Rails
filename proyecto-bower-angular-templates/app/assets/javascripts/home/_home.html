@@ -1,0 +1,37 @@
+<div class="page-header">
+	<h1>Aplicacion Angular Test ui-view</h1>
+</div>
+
+			
+<div> 
+		{{test}}
+</div>
+
+
+<div ng-repeat="post in posts | orderBy:'-upvotes'">
+
+	<span class="glyphicon glyphicon-thumbs-up" ng-click="incrementUpvotes(post)"></span>  
+	<span style="font-size:20px; margin-left:10px;">
+
+	<a ng-show="post.link" href="{{post.link}}">{{post.title}}</a> 
+
+	<span ng-hide="post.link">{{post.title}}</span> - upvotes: {{post.upvotes}} 
+	<!-- Agregado enlace a comentarios, ng-repeat crea un $index por cada elemento -->
+	<span><a href="#/posts/{{$index}}">Comentarios</a></span>
+
+</div>
+
+
+<form ng-submit="addPost()" style="margin-top:30px;">  
+	<h3>Agregar nuevo post</h3>
+
+
+	<div class="form-group">
+
+		<input class="form-control" type="text" placeholder="Titulo" ng-model="title"></input> 
+	</div>
+	<div class="form-group">
+		<input class="form-control" type="text" placeholder="Link" ng-model="link"></input>
+	</div>
+	<button type="submit" class="btn btn-primary">Postear</button>
+</form>

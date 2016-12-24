@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsTutorial</title>
+
+    <%= csrf_meta_tags %>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+
+  </head>
+
+    <body ng-app="proyectoTest">  
+  		<div class="row"> 
+    		<div class="col-md-6 col-md-offset-3">
+    			<!-- se invocan las templates usando el ui-router -->
+	    		 <ui-view></ui-view>  
+	    	</div>
+	    </div>
+
+
+	    
+  	</body>
+</html>
